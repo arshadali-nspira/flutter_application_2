@@ -4,9 +4,13 @@ import 'screens/subjects_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // 1. Initialize Repository
   final repo = IsarRepository();
   await repo.init();
-  await repo.loadJson();
+
+  // Note: loadJson/downloadAndProcessJson call removed from here.
+  // It is now handled in SubjectsScreen.
 
   runApp(MyApp(repo: repo));
 }
@@ -19,6 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Isar JSON Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(useMaterial3: true, colorSchemeSeed: Colors.blue),
       home: SubjectsScreen(repo: repo),
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/isar_repository.dart';
+import '../isar_repository.dart';
 import '../models/chapter_model.dart';
 import '../models/topic_model.dart';
 import '../models/video_model.dart';
